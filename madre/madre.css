@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffe6eb;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  overflow: visible; 
+}
+
+h1 {
+  color: #e60073;
+  font-family: "Permanent Marker", cursive;
+  font-size: 50px;
+  margin-bottom: 35px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.images1, .images2 {
+  transition: transform 0.3s ease-in-out;
+}
+
+.images1 {
+  transform: rotate(8deg);
+}
+
+.images1 img {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #e60073;
+  border-radius: 10px;
+}
+
+.images2 {
+  transform: rotate(-5deg);
+}
+
+.images2 img {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #e60073;
+  border-radius: 10px;
+}
+
+p {
+  padding: 10px;
+  font-size: 20px;
+  color: #d0005e;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.float {
+  position: absolute;
+  color: #e60073;
+  font-size: 30px;
+  animation: float 10s infinite ease-in-out;
+  opacity: 0.5;
+  z-index: 999; 
+  pointer-events: none; 
+}
+
+
+
+.float:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.float:nth-child(2) {
+  top: 80%;
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.float:nth-child(3) {
+  top: 30%;
+  left: 90%;
+  animation-delay: 4s;
+}
+
+.float:nth-child(4) {
+  top: 60%;
+  left: 70%;
+  animation-delay: 6s;
+}
+
+.float:nth-child(5) {
+  top: 20%;
+  left: 40%;
+  animation-delay: 8s;
+}
+
+.float:nth-child(6) {
+  top: 45%;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+.float:nth-child(7) {
+  top: 15%;
+  left: 60%;
+  animation-delay: 3s;
+}
+
+.float:nth-child(8) {
+  top: 70%;
+  left: 85%;
+  animation-delay: 5s;
+}
+
+.float:nth-child(9) {
+  top: 50%;
+  left: 30%;
+  animation-delay: 7s;
+}
+
+.float:nth-child(10) {
+  top: 25%;
+  left: 75%;
+  animation-delay: 9s;
+}
+
+/* Variación de tamaños para los iconos */
+.float:nth-child(odd) {
+  font-size: 25px;
+}
+
+.float:nth-child(3n) {
+  font-size: 35px;
+}
+
+/* Variación de colores */
+.float:nth-child(3n+1) {
+  color: rgba(255, 102, 153, 0.7);
+}
+
+.float:nth-child(3n+2) {
+  color: rgba(204, 0, 102, 0.75);
+}
+
+
+
+/* Estilos para la flor con iconos */
+.growing-flower {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; 
+  height: 200px;
+  width: 200px;
+  animation: growFlower 6s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centro de la flor */
+.flower-center {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  top: 12px;
+}
+
+.flower-center i {
+  font-size: 70px;
+  color: #ffcc00;
+}
+
+/* Pétalos de la flor */
+.petals {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
+
+.petal {
+  position: absolute;
+  font-size: 28px;
+  color: #ff66a3;
+  transform-origin: center 30px;
+  animation: petalWave 3s ease-in-out infinite;
+  top: 10px;
+  left: 36px;
+}
+
+/* Posicionamiento de cada pétalo alrededor del centro */
+.petal:nth-child(1) {
+  --rotate: 0deg;
+  transform: rotate(0deg) translateY(-30px) scale(1.2);
+  animation-delay: 0s;
+}
+
+.petal:nth-child(2) {
+  --rotate: 45deg;
+  transform: rotate(45deg) translateY(-30px) scale(1.2);
+  animation-delay: 0.4s;
+}
+
+.petal:nth-child(3) {
+  --rotate: 90deg;
+  transform: rotate(90deg) translateY(-30px) scale(1.2);
+  animation-delay: 0.8s;
+}
+
+.petal:nth-child(4) {
+  --rotate: 135deg;
+  transform: rotate(135deg) translateY(-30px) scale(1.2);
+  animation-delay: 1.2s;
+}
+
+.petal:nth-child(5) {
+  --rotate: 180deg;
+  transform: rotate(180deg) translateY(-30px) scale(1.2);
+  animation-delay: 1.6s;
+}
+
+.petal:nth-child(6) {
+  --rotate: 225deg;
+  transform: rotate(225deg) translateY(-30px) scale(1.2);
+  animation-delay: 2.0s;
+}
+
+.petal:nth-child(7) {
+  --rotate: 270deg;
+  transform: rotate(270deg) translateY(-30px) scale(1.2);
+  animation-delay: 2.4s;
+}
+
+.petal:nth-child(8) {
+  --rotate: 315deg;
+  transform: rotate(315deg) translateY(-30px) scale(1.2);
+  animation-delay: 2.8s;
+}
+
+/* Tallo y hojas */
+.stem {
+  position: absolute;
+  top: 75px;
+  width: 8px;
+  height: 100px;
+  background-color: #4caf50;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.leaf-left {
+  position: absolute;
+  left: -12px;
+  top: 30px;
+  font-size: 22px;
+  color: #4caf50;
+  transform: rotate(-30deg);
+}
+
+.leaf-right {
+  position: absolute;
+  right: -12px;
+  top: 60px;
+  font-size: 22px;
+  color: #4caf50;
+  transform: rotate(30deg);
+}
+
+/* Animación para el crecimiento de la flor */
+@keyframes growFlower {
+  0% {
+    transform: translateX(-50%) translateY(100%) scale(0.1);
+    opacity: 0.2;
+  }
+
+  40% {
+    transform: translateX(-50%) translateY(20%) scale(1);
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(20%) scale(1);
+    opacity: 1;
+  }
+
+  65% {
+    transform: translateX(-50%) translateY(20%) scale(1) rotate(5deg);
+  }
+
+  70% {
+    transform: translateX(-50%) translateY(20%) scale(1) rotate(-5deg);
+  }
+
+  75% {
+    transform: translateX(-50%) translateY(20%) scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(100%) scale(0.1);
+    opacity: 0.2;
+  }
+}
+
+/* Animación para los pétalos */
+@keyframes petalWave {
+  0% {
+    transform: rotate(var(--rotate)) translateY(-30px) scale(1.2);
+  }
+
+  50% {
+    transform: rotate(var(--rotate)) translateY(-35px) scale(1.3);
+  }
+
+  100% {
+    transform: rotate(var(--rotate)) translateY(-30px) scale(1.2);
+  }
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-40px) rotate(180deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0px) rotate(360deg);
+    opacity: 0.5;
+  }
+}
+
+/* Animación para el cursor parpadeante */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #e60073; }
+}
+
+/* Estilos para la aparición suave de imágenes */
+.smooth-image {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  animation: smoothAppear 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+  will-change: opacity, transform;
+}
+
+.images1 .smooth-image {
+  animation-delay: 0.3s;
+}
+
+.images2 .smooth-image {
+  animation-delay: 0.8s;
+}
+
+@keyframes smoothAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    filter: blur(5px);
+  }
+  30% {
+    opacity: 0.6;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Imágenes */
+.images1 img, .images2 img {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #e60073;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(230, 0, 115, 0.3);
+  transition: all 0.3s ease;
+}
+
+.images1 img:hover, .images2 img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(230, 0, 115, 0.4);
+}
+
+.images1, .images2 {
+  position: relative;
+}
+
+/* Estilos para los botones */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 5px auto;
+}
+
+.custom-button {
+  background-color: #e60073;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(230, 0, 115, 0.3);
+  outline: none;
+}
+
+.custom-button:hover {
+  background-color: #ff3399;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(230, 0, 115, 0.5);
+}
+
+.custom-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(230, 0, 115, 0.3);
+}
+
+/* Estilos para el reproductor de audio (oculto) */
+audio {
+  display: none;
+}
+
+/* Estilos para los corazones sorpresa */
+.surprise-heart {
+  font-size: 40px !important;
+  opacity: 0.8 !important;
+}
+
+/* Estilos para el modal tipo lightbox */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  animation: fadeInModal 0.5s ease-in-out;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 25px;
+  max-width: 800px;
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.6);
+  position: relative;
+  animation: slideDown 0.6s ease-in-out;
+  background: linear-gradient(to bottom right, #ffe6eb, #ffffff);
+  border: 5px solid #e60073;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #e60073;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.close-modal:hover {
+  transform: scale(1.2);
+}
+
+.modal h2 {
+  text-align: center;
+  color: #e60073;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.modal-image-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.modal-image-container img {
+  max-width: 100%;
+  max-height: 350px;
+  border-radius: 10px;
+  border: 3px solid #e60073;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-message {
+  text-align: center;
+  color: #d0005e;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 25px 0 15px;
+  font-weight: 500;
+}
+
+/*responsive*/
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .image-container {
+    flex-direction: row;
+    
+  }
+
+  .images1 {
+    transform: rotate(7deg);
+  }
+  .images2 {
+    transform: rotate(-4deg);
+  }
+
+  .images1 img, .images2 img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+  }
+}
